@@ -1,3 +1,11 @@
+--[[
+Copyright (c) 2015 calloh.com
+@author Tom Lee
+@date 2015-03-10
+--]]
+--------------------------------
+-- @module 对本地文件和文件夹的管理
+
 require "lfs"
 
 function subRight(str)
@@ -58,8 +66,6 @@ function _read(filename, filepath, writablePath, resFileFullPath)
 	end
 	return dataString
 end
-
-
 
 function _write(filename, filepath, writablePath, dataString)
 	_checkDirectory(filepath, writablePath)

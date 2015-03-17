@@ -1,3 +1,10 @@
+--[[
+Copyright (c) 2015 calloh.com
+@author Tom Lee
+@date 2015-03-10
+--]]
+--------------------------------
+-- @module 网络数据请求
 
 --local Network = import(".Network")
 

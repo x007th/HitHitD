@@ -1,40 +1,29 @@
-
--- 文件定义  文件管理
 --[[
-点击菜单音效
-点击格子的音效
-击中时的音效
-加分音效
-减分音效
-ready go 音效
-胜利音效
-失败音效
+Copyright (c) 2015 calloh.com
+@author Tom Lee
+@date 2015-03-10
+--]]
+--------------------------------
+-- @module 游戏中音乐资源及管理
 
-logo界面背景音效
-主界面背景音效
-游戏时背景音效
-]]
 local AudioManager = class("AudioManager")
-
 --AudioManager.FILE_PATH  = "res/audio/" 
-
-
 local sound = {
-	LOST       = "5538.mp3" ,
-	WIN        = "5553.mp3" ,
-	OVER       = "5322.mp3" ,
-	COUNT_DOWN = "5541.mp3",	--"5541.mp3" ,
-	READY_123   = "2573.mp3" ,
-	READY_GO   = "5375.mp3" ,
-	HIT_ERROR  = "5520.mp3" ,
-	HIT_RIGHT  = "5371.mp3" ,
-	HIT_GRID   = "5364.mp3" ,
-	HIT_BUTTON = "TapButtonSound.mp3" ,
+	LOST       = "5538.mp3" ,	--失败时
+	WIN        = "5553.mp3" ,	--成功时
+	OVER       = "5322.mp3" ,	--游戏结束时
+	COUNT_DOWN = "5541.mp3",	--游戏即将结束时的倒计时提醒
+	READY_123   = "2573.mp3" ,	--开始倒计时321
+	READY_GO   = "5375.mp3" ,	--开始游戏时
+	HIT_ERROR  = "5520.mp3" ,	--点击对象错误时
+	HIT_RIGHT  = "5371.mp3" ,	--点击对象正确时
+	HIT_GRID   = "5364.mp3" ,	--点击格子
+	HIT_BUTTON = "TapButtonSound.mp3" , --点击按钮对象时
 }
 
 local music = {
-	GAME_MUSIC = "5373.mp3" ,
-	HOME_MUSIC = "2498.mp3" ,
+	GAME_MUSIC = "5373.mp3" ,	--进入游戏开始时循环背景音乐
+	HOME_MUSIC = "2498.mp3" ,	--进入首页时循环背景音乐
 }
 
 function AudioManager:ctor( ... )
@@ -50,10 +39,6 @@ end
 function AudioManager:stop()
 	audio.stopMusic()
 	audio.stopAllSounds()
-end
-
-function AudioManager:play()
-	-- body
 end
 
 function AudioManager:loadSound()
@@ -118,8 +103,6 @@ end
 function AudioManager:over()
 	local filename = app:getResPath(sound.OVER )
 	audio.playSound(filename)
-	--5322.mp3
-	--5391.mp3
 end
 
 function AudioManager:win()

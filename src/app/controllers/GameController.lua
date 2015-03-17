@@ -1,3 +1,13 @@
+--[[
+Copyright (c) 2015 calloh.com
+@author Tom Lee
+@date 2015-03-10
+@other 
+--]]
+--------------------------------
+
+-- @module 游戏准备界面
+
 local ReadyView = class("ReadyView", function ( ... )
 	return display.newSprite()
 end)
@@ -24,6 +34,10 @@ function ReadyView:play()
 		app:audio():readyGo()
 	end , 2)
 end
+
+
+
+-- @module 游戏逻辑控制器
 
 local GameController = class("HomeMenuController", function()
 	return display.newNode()

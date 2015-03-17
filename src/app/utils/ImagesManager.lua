@@ -1,9 +1,14 @@
+--[[
+Copyright (c) 2015 calloh.com
+@author Tom Lee
+@date 2015-03-10
+--]]
+--------------------------------
+-- @module 游戏中图片资源及管理
+
 local ImagesManager = class("classname")
-
---分类场景图片
-
 local path = "res/images/"
-
+--基本图片细节
 local list = {
 	mouse = {
 		image = "mouse_0.png",
@@ -74,8 +79,7 @@ local list = {
 		},
 	},
 }
-
-
+--配置各个场景的需要加载资源
 local scene = {
 	logo = {list.logo, list.popup, list.chip ,list.share, list.home, list.number},
 	home = {},

@@ -1,3 +1,11 @@
+--[[
+Copyright (c) 2015 calloh.com
+@author Tom Lee
+@date 2015-03-10
+--]]
+--------------------------------
+-- @module 游戏用户玩家的数据对象的管理
+
 local UserModel = class("UserModel", cc.mvc.ModelBase)
 
 UserModel.DATA_FILE_PATH ="res/data/" 

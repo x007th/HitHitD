@@ -1,3 +1,11 @@
+--[[
+Copyright (c) 2015 calloh.com
+@author Tom Lee
+@date 2015-03-10
+--]]
+--------------------------------
+-- @module 菜单项界面
+
 local OptionsView = class("OptionsView", function ( ... )
 	return display.newNode()
 end)
@@ -61,11 +69,9 @@ function OptionsView:ctor(model, delegate)
 end
 
 function OptionsView:onFeedback_(dtype)
-	if dtype == 1 then
-		--printf("is : %s", "yes")
-	elseif dtype == 2 then
-		--printf("is : %s", "no")
-	end
+	--if dtype == 1 then
+	--elseif dtype == 2 then
+	--end
 	self.delegate:delegate_onSaveVolume()
 	app:popupInstance():close()
 end

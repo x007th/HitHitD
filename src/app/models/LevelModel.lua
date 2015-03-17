@@ -1,3 +1,11 @@
+--[[
+Copyright (c) 2015 calloh.com
+@author Tom Lee
+@date 2015-03-10
+--]]
+--------------------------------
+-- @module 游戏关卡的数据对象的管理
+
 -- 时间 每个种类的显示个数 过关评价分值
 function new_map_item(timerNum, typeQueue, reviewsQueue)
     return {

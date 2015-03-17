@@ -1,3 +1,12 @@
+--[[
+Copyright (c) 2015 calloh.com
+@author Tom Lee
+@date 2015-03-10
+@other 
+--]]
+--------------------------------
+-- @module 地鼠显示对象的控制器
+
 local Cell = import("..cells.BaseCell")
 
 local Mouse = class("Mouse", function ( ... )

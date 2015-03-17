@@ -1,55 +1,13 @@
 --[[
-local Popup = class("Popup")
+Copyright (c) 2015 calloh.com
+@author Tom Lee
+@date 2015-03-10
+--]]
+--------------------------------
+-- @module 游戏中弹出视图对象的管理
 
-function Popup:ctor(properties)
-    self.queue = {}
-    self.zorder = 999
-end
-
-local PopupManager = function ( popup_ )
-	
-	function show( view , closeHandler)
-		local queue = popup_.queue
-		table.insert(queue, {
-			view = view, 
-			handler = closeHandler,
-		})
-		display.getRunningScene():add(view, popup_.zorder)
-		popup_.zorder = popup_.zorder + 1
-	end 
-
-	function close( )
-		local queue = popup_.queue
-		local obj = queue[#queue]
-		display.getRunningScene():removeChild(obj.view)
-		obj.handler()
-		queue[#queue] = nil
-		table.remove(queue,#queue)
-		popup_.zorder = popup_.zorder - 1
-	end 
-
-	function closeAll( )	
-		local queue = popup_.queue
-		while true do
-			if #queue == 0 then
-					return
-			end
-			close()
-		end
-	end 
-
-	return {
-		show = show,
-		close = close,
-		closeAll = closeAll,
-	}
-end
-
-return PopupManager(Popup.new())
-]]
 
 local PopupManager = class("PopupManager")
-
 
 function PopupManager:ctor(properties)
     self.queue = {}
@@ -124,6 +82,68 @@ function PopupManager:checkIsLast()
 	end
 	return false
 end
+
+return PopupManager
+
+-------------------------------------------------------
+-------------------------------------------------------
+--其他可同样实现方式的记录
+-------------------------------------------------------
+
+
+--闭包方式实现-------------------------------------------------------
+
+--[[
+local Popup = class("Popup")
+
+function Popup:ctor(properties)
+    self.queue = {}
+    self.zorder = 999
+end
+
+local PopupManager = function ( popup_ )
+	
+	function show( view , closeHandler)
+		local queue = popup_.queue
+		table.insert(queue, {
+			view = view, 
+			handler = closeHandler,
+		})
+		display.getRunningScene():add(view, popup_.zorder)
+		popup_.zorder = popup_.zorder + 1
+	end 
+
+	function close( )
+		local queue = popup_.queue
+		local obj = queue[#queue]
+		display.getRunningScene():removeChild(obj.view)
+		obj.handler()
+		queue[#queue] = nil
+		table.remove(queue,#queue)
+		popup_.zorder = popup_.zorder - 1
+	end 
+
+	function closeAll( )	
+		local queue = popup_.queue
+		while true do
+			if #queue == 0 then
+					return
+			end
+			close()
+		end
+	end 
+
+	return {
+		show = show,
+		close = close,
+		closeAll = closeAll,
+	}
+end
+
+return PopupManager(Popup.new())
+]]
+
+--单例化实现-------------------------------------------------------
 --[[
 local instance = nil
 PopupManager.getInstance = function( ... )
@@ -133,7 +153,3 @@ PopupManager.getInstance = function( ... )
 	return instance
 end
 ]]
-return PopupManager
-
-
-

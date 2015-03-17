@@ -1,3 +1,10 @@
+--[[
+Copyright (c) 2015 calloh.com
+@author Tom Lee
+@date 2015-03-10
+--]]
+--------------------------------
+-- @module 游戏数据对象的管理
 
 local scheduler = require(cc.PACKAGE_NAME .. ".scheduler")
 

@@ -1,15 +1,18 @@
+--[[
+Copyright (c) 2015 calloh.com
+@author Tom Lee
+@date 2015-03-10
+--]]
+--------------------------------
+-- @module 游戏说明界面
+
 local ReadMeView = class("ReadMeView", function()
 	return display.newNode()
 end)
 
 function ReadMeView:ctor(model, delegate)
 	dump(device)
-	local text_ = --io.readfile("gamedata.txt")
-	"两只老虎，两只老虎\n两只老虎，两只老虎\n两只老虎，两只老虎\n两只老虎，两只老虎\n两只老虎，两只老虎\n"
-	--io.readfile("gamedata.txt")
-	--for i=1,3 do
-	--	text_ = text_ .. text_
-	--end
+	local text_ = "两只老虎，两只老虎\n两只老虎，两只老虎\n两只老虎，两只老虎\n两只老虎，两只老虎\n两只老虎，两只老虎\n"
 	local label = display.newTTFLabel({
 	    text = text_,
 	    font = "Arial",
@@ -29,11 +32,9 @@ function ReadMeView:ctor(model, delegate)
 end
 
 function ReadMeView:onFeedback_(dtype)
-	if dtype == 1 then
-		--printf("is : %s", "yes")
-	elseif dtype == 2 then
-		--printf("is : %s", "no")
-	end
+	--if dtype == 1 then
+	--elseif dtype == 2 then
+	--end
 	app:popupInstance():close()
 end
 

@@ -1,3 +1,11 @@
+--[[
+Copyright (c) 2015 calloh.com
+@author Tom Lee
+@date 2015-03-10
+--]]
+--------------------------------
+-- @module 关卡选择界面
+
 local BarrierView = class("BarrierView", function ()
 	return display.newNode()
 end)
@@ -77,8 +85,6 @@ function BarrierView:newButton_(label, img, handler)
         	end
             
         end)
-        --.name = "b_"..label
-
 end
 
 return BarrierView

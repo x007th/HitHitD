@@ -1,3 +1,11 @@
+--[[
+Copyright (c) 2015 calloh.com
+@author Tom Lee
+@date 2015-03-10
+@other 
+--]]
+--------------------------------
+-- @module 自定义对话框组件
 
 local DialogBox = class("DialogBox", function()
 	return display.newNode()

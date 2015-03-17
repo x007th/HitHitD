@@ -1,3 +1,11 @@
+--[[
+Copyright (c) 2015 calloh.com
+@author Tom Lee
+@date 2015-03-10
+@other 
+--]]
+--------------------------------
+-- @module 地鼠的显示对象
 
 local scheduler = require(cc.PACKAGE_NAME .. ".scheduler")
 

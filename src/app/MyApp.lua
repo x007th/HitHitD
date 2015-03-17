@@ -1,4 +1,12 @@
 
+--[[
+Copyright (c) 2015 calloh.com
+@author Tom Lee
+Creation 2015-03-10
+--]]
+--------------------------------
+-- @module 启动入口
+
 require("config")
 require("cocos.init")
 require("framework.init")

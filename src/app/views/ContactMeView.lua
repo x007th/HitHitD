@@ -1,3 +1,10 @@
+--[[
+Copyright (c) 2015 calloh.com
+@author Tom Lee
+@date 2015-03-10
+--]]
+--------------------------------
+-- @module 联系我开发者介绍界面
 
 local ContactMeView = class("ContactMeView", function ( ... )
 	return display.newNode()
@@ -77,11 +84,9 @@ function ContactMeView:ctor(model, delegate)
 end
 
 function ContactMeView:onFeedback_(dtype)
-	if dtype == 1 then
-		--printf("is : %s", "yes")
-	elseif dtype == 2 then
-		--printf("is : %s", "no")
-	end
+	--if dtype == 1 then
+	--elseif dtype == 2 then
+	--end
 	app:popupInstance():close()
 end
 

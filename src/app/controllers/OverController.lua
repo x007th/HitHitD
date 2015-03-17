@@ -1,3 +1,12 @@
+--[[
+Copyright (c) 2015 calloh.com
+@author Tom Lee
+@date 2015-03-10
+@other 
+--]]
+--------------------------------
+-- @module 游戏结束后成绩单展示逻辑控制器
+
 local OverController = class("OverController", function ( ... )
 	return display.newNode()
 end)

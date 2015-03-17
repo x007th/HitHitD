@@ -1,3 +1,11 @@
+--[[
+Copyright (c) 2015 calloh.com
+@author Tom Lee
+@date 2015-03-10
+--]]
+--------------------------------
+-- @module 首页场景管理
+
 local HomeScene = class("HomeScene", function()
     return display.newScene("HomeScene")
 end)

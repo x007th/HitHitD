@@ -1,3 +1,11 @@
+--[[
+Copyright (c) 2015 calloh.com
+@author Tom Lee
+@date 2015-03-10
+--]]
+--------------------------------
+-- @module 游戏中地鼠类型的数据对象的管理
+
 --种类 对应的分值 显示时间 图片序列起始－长度
 function new_map_item(scoreNum, timerNum, imgBeginNum, imgLenNum)
     return {

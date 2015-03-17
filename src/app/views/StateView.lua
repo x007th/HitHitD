@@ -1,3 +1,10 @@
+--[[
+Copyright (c) 2015 calloh.com
+@author Tom Lee
+@date 2015-03-10
+--]]
+--------------------------------
+-- @module 游戏状态栏展示界面
 
 local StateView = class("StateView", function ( ... )
 	return display.newNode()
@@ -18,7 +25,6 @@ function StateView:ctor( model, delegate, properties)
 	self.model = model
 	self.delegate = delegate
 end
-
 
 function StateView:layout_()
 	if self.progressBar then
@@ -45,7 +51,6 @@ function StateView:layout_()
 end
 
 function StateView:newText( textContent, align, x, y, size, color)
-	-- body
 	return display.newTTFLabel({
 		    text = textContent,
 		    font = "Arial",

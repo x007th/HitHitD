@@ -1,3 +1,11 @@
+--[[
+Copyright (c) 2015 calloh.com
+@author Tom Lee
+@date 2015-03-10
+--]]
+--------------------------------
+-- @module 启动时显示LOGO场景管理
+
 local LogoScene = class("LogoScene", function()
     return display.newScene("LogoScene")
 end)

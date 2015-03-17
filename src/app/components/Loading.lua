@@ -1,3 +1,11 @@
+--[[
+Copyright (c) 2015 calloh.com
+@author Tom Lee
+@date 2015-03-10
+@other 
+--]]
+--------------------------------
+-- @module 自定义loading 组件
 
 local Loading = class("Loading")
 
@@ -49,8 +57,6 @@ function Loading:clear_()
 	self:init_()
 end
 
-
-
 function Loading:new_()
     self.box = display.newColorLayer(cc.c4b(0xfa,0xf8,0xef, 200))
 	display.getRunningScene():add(self.box, self.zorder)
@@ -69,12 +75,11 @@ function Loading:new_()
 	self.node = display.newSprite("#"..app:images():list().chip.queue.hollow_star, display.cx, display.cy)
 		:addTo(self.box)
 
-
 	self.label = display.newTTFLabel({
 	    text = self.text,
 	    font = "Arial",
 	    size = 24,
-	    color = cc.c3b(100, 100, 100), -- 使用纯红色
+	    color = cc.c3b(100, 100, 100),
 	    align = cc.TEXT_ALIGNMENT_LEFT,
 	    valign = cc.VERTICAL_TEXT_ALIGNMENT_TOP,
 	})
@@ -85,8 +90,6 @@ function Loading:new_()
 
 	self.label:pos(nodeX, nodeY - nodeSize.height * 0.5)
 	self.label:addTo(self.box)
-
-
 end
 
 return Loading

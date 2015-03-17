@@ -1,17 +1,19 @@
-
-
-
+--[[
+Copyright (c) 2015 calloh.com
+@author Tom Lee
+@date 2015-03-10
+--]]
+--------------------------------
+-- @module 游戏展示区舞台界面
 
 local PerformerView = class("PerformerView", function ( ... )
 	return display.newNode()
 end)
 
-
 function PerformerView:ctor(model, delegate, properties)
 	local cls = model.class
 	cc.EventProxy.new(model, self)
         :addEventListener(cls.UPDATE_DATA_EVENT, handler(self, self.updateData_))
-        --:addEventListener(cls.TIMER_OVER_EVENT, handler(self, self.timerOver_))
 
 	self.layoutWidth = properties.width
 	self.layoutHeight = properties.height

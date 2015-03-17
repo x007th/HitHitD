@@ -1,3 +1,11 @@
+--[[
+Copyright (c) 2015 calloh.com
+@author Tom Lee
+@date 2015-03-10
+--]]
+--------------------------------
+-- @module 游戏结束时弹出界面
+
 local OverView = class("OverView", function ( ... )
 	return display.newNode()
 end)

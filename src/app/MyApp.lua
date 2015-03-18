@@ -36,12 +36,11 @@ end
 
 function MyApp:run()
     self:enterScene("LogoScene")
-    --device.showAlert("title", device.writablePath)
 end
 
 function MyApp:gotoHomeScene()
-  display.getRunningScene():removeAllNodeEventListeners()
-  self:enterScene("HomeScene",nil,"fade", 0.5, display.COLOR_WHITE)
+    display.getRunningScene():removeAllNodeEventListeners()
+    self:enterScene("HomeScene",nil,"fade", 0.5, display.COLOR_WHITE)
 end
 
 function MyApp:gotoGameScene()
@@ -50,14 +49,9 @@ function MyApp:gotoGameScene()
 end
 
 function MyApp:keyEvent(scene)
-  --local scene = display.getRunningScene()
-  scene:setKeypadEnabled(true)
-  scene:addNodeEventListener(cc.KEYPAD_EVENT, function (event)
-      --dump(event)
-      local str = "event.key is [ " .. event.key .. " ]"
-      --device.showAlert("title", str)
+    scene:setKeypadEnabled(true)
+    scene:addNodeEventListener(cc.KEYPAD_EVENT, function (event)
       if event.key == "back" then
-          --print("back")
           local function onButtonClicked(event)
               if event.buttonIndex == 1 then
                   cc.Director:getInstance():endToLua()
@@ -66,11 +60,10 @@ function MyApp:keyEvent(scene)
                   end
               end
           end
-          device.showAlert("Confirm Exit", "Are you sure exit game ?", {"YES", "NO"}, onButtonClicked)
+        device.showAlert("Confirm Exit", "Are you sure exit game ?", {"YES", "NO"}, onButtonClicked)
       elseif event.key == "menu" then
-          --print("menu")
       end
-  end)
+    end)
 end
 
 function MyApp:getControllerClass(name)
@@ -86,13 +79,13 @@ function MyApp:getModelClass(name)
 end
 
 function MyApp:createComponent(name, properties)
-	local packageName = self.packageRoot .. ".components." .. name
+    local packageName = self.packageRoot .. ".components." .. name
     local clazz = require(packageName)
     return clazz.new(properties)
 end
 
 function MyApp:createUtil(name, properties)
-	local packageName = self.packageRoot .. ".utils." .. name
+    local packageName = self.packageRoot .. ".utils." .. name
     local clazz = require(packageName)
     return clazz.new(properties)
 end
@@ -104,19 +97,19 @@ function MyApp:createCell(name, ...)
 end
 
 function MyApp:additionEventProtocol(eventDispatcher)
-	cc(eventDispatcher):addComponent("components.behavior.EventProtocol"):exportMethods()
+    cc(eventDispatcher):addComponent("components.behavior.EventProtocol"):exportMethods()
 end
 
 function MyApp:EventProxy(eventDispatcher, view)
-	return cc.EventProxy.new(eventDispatcher, view)
+    return cc.EventProxy.new(eventDispatcher, view)
 end
 
 function MyApp:popupInstance()
-	return self.popup_
+    return self.popup_
 end
 
 function MyApp:loadingInstance()
-	return self.loading_
+    return self.loading_
 end
 
 function MyApp:httpInstance()
